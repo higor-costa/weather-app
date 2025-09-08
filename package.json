@@ -1,0 +1,25 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Desafio do Frontend Mentor",
+  "homepage": "https://github.com/higor-costa/weather-app",
+  "bugs": {
+    "url": "https://github.com/higor-costa/weather-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/higor-costa/weather-app.git"
+  },
+  "license": "ISC",
+  "author": "Higor Costa",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
+  }
+}
