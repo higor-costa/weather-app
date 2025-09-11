@@ -10,27 +10,67 @@
   </style>
 </head>
 <body>
+  <header class="header">
+  <!-- Logo -->
+  <a href="/" class="header__logo">
+    <img src="./assets/images/logo.svg" alt="Weather App Logo">
+  </a>
 
-  Units
+  <!-- Dropdown de Unidades -->
+  <div class="header__units">
+    <button class="header__units-dropdown" aria-expanded="false" aria-controls="header__units-container" id="toggleUnits">
+      <img src="./assets/images/icon-units.svg" alt="Units Icon">
+      <span>Units</span>
+      <img src="./assets/images/icon-dropdown.svg" alt="Dropdown Icon">
+    </button>
 
-  Switch to Imperial/Metric
+    <div class="header__units-container" id="header__units-container" >
+      <h2 class="units-container__title">Switch to Imperial</h2>
 
-  Temperature
+      <!-- Temperatura -->
+      <fieldset class="units-container__options">
+        <legend class="options__subtitle">Temperature</legend>
+        <label class="options__unit options__unit-active" for="celsius">
+          <input type="radio" name="temperature" id="celsius" value="celsius">
+          Celsius (°C)
+        </label>
+        <label class="options__unit" for="fahrenheit">
+          <input type="radio" name="temperature" id="fahrenheit" value="fahrenheit">
+          Fahrenheit (°F)
+        </label>
+      </fieldset>
 
-  Celsius (°C)
-  Fahrenheit (°F)
+      <!-- Velocidade do Vento -->
+      <fieldset class="units-container__options">
+        <legend class="options__subtitle">Wind Speed</legend>
+        <label class="options__unit options__unit-active" for="kmh">
+          <input type="radio" name="wind" id="kmh" value="kmh">
+          km/h
+        </label>
+        <label class="options__unit" for="mph">
+          <input type="radio" name="wind" id="mph" value="mph">
+          mph
+        </label>
+      </fieldset>
 
-  Wind Speed
+      <!-- Precipitação -->
+      <fieldset class="units-container__options">
+        <legend class="options__subtitle">Precipitation</legend>
+        <label class="options__unit options__unit-active" for="mm">
+          <input type="radio" name="precipitation" id="mm" value="mm">
+          Millimeters (mm)
+        </label>
+        <label class="options__unit" for="inches">
+          <input type="radio" name="precipitation" id="inches" value="inches">
+          Inches (in)
+        </label>
+      </fieldset>
+    </div>
+  </div>
 
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
+  <!-- Título Principal -->
+  <h1 class="header__title-main">How's the sky looking today?</h1>
+</header>
 
   Search for a city, e.g., New York
   Search
