@@ -3,3 +3,67 @@ body {
   padding: 2rem 4rem;
   min-width: 100vh;
 }
+
+// Main
+main {
+  @include displayFlex($fd: column);
+  margin: 3rem 0;
+}
+
+.header__title-main {
+  Color: $Neutral-0;
+  font: {
+    family: $font-bricolage;
+    size: 2.5rem;
+  }
+  margin-bottom: 3rem;
+}
+
+.form__container {
+  min-width: 30rem;
+  @include displayFlex($ai: initial, $margin: .9rem);
+
+  div {
+    @include displayFlex($jc: flex-start, $margin: .9rem );
+    background-color: $Neutral-800;
+    width: 80%;
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    color: $Neutral-200;
+
+    &:focus-within {
+      @include boxShadowFocus($neutral-900, $Neutral-0);
+    }
+  }
+
+  .form__field-text {
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    color: $Neutral-200;
+
+    &::placeholder {
+      color: $Neutral-200;
+    }
+  }
+
+  .form__button {
+    background-color: $Blue-500;
+    padding: 0 1.5rem;
+    color: $Neutral-0;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: background-color .2s ease-in-out;
+
+    &:focus {
+      @include boxShadowFocus($neutral-900, $Blue-700);
+    }
+
+    &:hover {
+      background-color: $Blue-700;
+    }
+  }
+}
