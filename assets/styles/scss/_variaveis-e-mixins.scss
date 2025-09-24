@@ -59,3 +59,27 @@ $font-DMSans: 'DM Sans';
     0px 0px 1px 2px $innerShadow,
     0px 0px 1px 4px $outShadow;
 }
+
+@mixin styleButtonDDropdown($bg: $Neutral-800) {
+  color: $Neutral-0;
+  background-color: $bg;
+  border: none;
+  padding: .8rem 1rem;
+  border-radius: 6px;
+  @include displayFlex(center, center, 10px);
+  line-height: 0;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background-color: $Neutral-700;
+  }
+  &:focus {
+    @include boxShadowFocus($neutral-900, $Neutral-0);
+  }
+
+  img {
+    width: .8rem;
+  }
+}
