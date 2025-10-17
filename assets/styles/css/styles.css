@@ -26,9 +26,15 @@ button {
 body {
   background-color: #03012d;
   padding: 2rem 4rem;
-  min-width: 100vh; }
+  max-width: 1440px;
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  gap: initial;
+  flex-direction: column;
+  margin: 0 auto; }
 
-/* line 8, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+/* line 10, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
 main {
   display: flex;
   justify-content: center;
@@ -37,14 +43,14 @@ main {
   flex-direction: column;
   margin: 3rem 0; }
 
-/* line 13, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+/* line 15, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
 .header__title-main {
   Color: white;
   font-family: "Bricolage Grotesque Bold";
   font-size: 2.5rem;
   margin-bottom: 3rem; }
 
-/* line 22, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+/* line 24, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
 .form__container {
   min-width: 30rem;
   display: flex;
@@ -52,7 +58,7 @@ main {
   align-items: initial;
   gap: 0.9rem;
   flex-direction: row; }
-  /* line 26, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 28, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container div {
     display: flex;
     justify-content: flex-start;
@@ -64,10 +70,10 @@ main {
     padding: 1rem 1rem;
     border-radius: 15px;
     color: #d5d4d9; }
-    /* line 34, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 36, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container div:focus-within {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px white; }
-  /* line 39, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 41, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container .form__field-text {
     width: 90%;
     background-color: transparent;
@@ -76,10 +82,10 @@ main {
     font-size: 1rem;
     outline: none;
     color: #d5d4d9; }
-    /* line 48, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 50, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__field-text::placeholder {
       color: #d5d4d9; }
-  /* line 53, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 55, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container .form__button {
     background-color: #4455da;
     padding: 0 1.5rem;
@@ -87,10 +93,10 @@ main {
     border-radius: 15px;
     font-size: 1rem;
     transition: background-color .2s ease-in-out; }
-    /* line 61, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 63, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__button:focus {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px #2d1c9c; }
-    /* line 65, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 67, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__button:hover {
       background-color: #2d1c9c; }
 
