@@ -80,5 +80,14 @@ main {
     &:hover {
       background-color: $Blue-700;
     }
+
+    @include device(small) {
+      padding: 1rem 0;
+    }
+  }
+
+  @include device(small) {
+   @include displayFlex($fd: column, $ai: initial, $jc: initial, $margin: 1rem);
+   min-width: 100%;
   }
 }
