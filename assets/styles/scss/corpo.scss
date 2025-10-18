@@ -4,6 +4,10 @@ body {
   max-width: 1440px;
   @include displayFlex($ai: normal, $jc: normal, $fd: column);
   margin: 0 auto;
+
+  @include device(small) {
+    padding: 1rem;
+  }
 }
 
 // Main
