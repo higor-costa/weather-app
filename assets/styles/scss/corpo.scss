@@ -45,6 +45,10 @@ main {
     &:focus-within {
       @include boxShadowFocus($neutral-900, $Neutral-0);
     }
+
+    @include device(small) {
+      width: 100%;
+    }
   }
 
   .form__field-text {
