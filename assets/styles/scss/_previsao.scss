@@ -66,6 +66,10 @@
     font-family: $font-DMSans;
     font-weight: normal;
     border: 2px solid $Neutral-600;
+
+    @include device(small) {
+      width: auto;
+    }
   }
 
   .daily-metrics__title {
