@@ -133,6 +133,9 @@
         color: $Neutral-300;
       }
     }
+    @include device(small) {
+      width: calc(100% / 3 - 1rem);
+    }
   }
 }
 
