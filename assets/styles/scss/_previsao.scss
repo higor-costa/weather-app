@@ -102,6 +102,9 @@
 
   .daily-forecast-container {
     @include displayFlex($jc: space-between, $margin: 1rem);
+    @include device(small) {
+      flex-wrap: wrap;
+    }
   }
 
   .forecast {
