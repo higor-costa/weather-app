@@ -45,6 +45,12 @@
     font-style: italic;
     font-weight: bold;
   }
+
+  @include device(small) {
+    text-align: center;
+    background: url('../../images/bg-today-small.svg') center center / cover no-repeat;
+    @include displayFlex($fd: column, $ai: center, $jc: center);
+  }
 }
 
 .daily-metrics {
