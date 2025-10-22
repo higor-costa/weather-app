@@ -88,7 +88,7 @@
     color: $Neutral-200;
   }
 
-  @include device(small) {
+  @media screen and (max-width: 940px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
