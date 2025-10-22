@@ -33,8 +33,12 @@ body {
   gap: initial;
   flex-direction: column;
   margin: 0 auto; }
+  @media screen and (max-width: 1000px) {
+    /* line 1, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    body {
+      padding: 1rem; } }
 
-/* line 10, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+/* line 14, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
 main {
   display: flex;
   justify-content: center;
@@ -43,14 +47,19 @@ main {
   flex-direction: column;
   margin: 3rem 0; }
 
-/* line 15, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+/* line 19, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
 .header__title-main {
   Color: white;
+  text-align: center;
   font-family: "Bricolage Grotesque Bold";
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 3rem; }
+  @media screen and (min-width: 675px) and (max-width: 1000px) {
+    /* line 19, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    .header__title-main {
+      width: 30rem; } }
 
-/* line 24, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+/* line 33, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
 .form__container {
   min-width: 30rem;
   display: flex;
@@ -58,7 +67,7 @@ main {
   align-items: initial;
   gap: 0.9rem;
   flex-direction: row; }
-  /* line 28, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 37, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container div {
     display: flex;
     justify-content: flex-start;
@@ -70,10 +79,14 @@ main {
     padding: 1rem 1rem;
     border-radius: 15px;
     color: #d5d4d9; }
-    /* line 36, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 45, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container div:focus-within {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px white; }
-  /* line 41, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    @media screen and (max-width: 759px) {
+      /* line 37, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+      .form__container div {
+        width: 100%; } }
+  /* line 54, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container .form__field-text {
     width: 90%;
     background-color: transparent;
@@ -82,10 +95,10 @@ main {
     font-size: 1rem;
     outline: none;
     color: #d5d4d9; }
-    /* line 50, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 63, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__field-text::placeholder {
       color: #d5d4d9; }
-  /* line 55, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 68, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container .form__button {
     background-color: #4455da;
     padding: 0 1.5rem;
@@ -93,12 +106,25 @@ main {
     border-radius: 15px;
     font-size: 1rem;
     transition: background-color .2s ease-in-out; }
-    /* line 63, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 76, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__button:focus {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px #2d1c9c; }
-    /* line 67, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 80, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__button:hover {
       background-color: #2d1c9c; }
+    @media screen and (max-width: 759px) {
+      /* line 68, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+      .form__container .form__button {
+        padding: 1rem 0; } }
+  @media screen and (max-width: 759px) {
+    /* line 33, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    .form__container {
+      display: flex;
+      justify-content: initial;
+      align-items: initial;
+      gap: 1rem;
+      flex-direction: column;
+      min-width: 100%; } }
 
 /* line 1, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
 .header {
@@ -225,19 +251,36 @@ main {
 
 /* line 1, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
 .weather {
-  width: 100%;
   margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: initial;
   flex-direction: row; }
+  @media screen and (max-width: 1439px) {
+    /* line 1, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    .weather {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: initial;
+      flex-direction: column; } }
+  @media screen and (min-width: 1439px) {
+    /* line 1, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    .weather {
+      width: 100%; } }
 
-/* line 7, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
-.weather__daily {
-  width: 70%; }
+@media screen and (min-width: 1440px) {
+  /* line 13, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  .weather__daily {
+    width: 70%; } }
 
-/* line 11, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+@media screen and (max-width: 759px) {
+  /* line 13, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  .weather__daily {
+    width: 100%; } }
+
+/* line 23, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
 .daily {
   background: url("../../images/bg-today-large.svg") center center/cover no-repeat;
   width: 100%;
@@ -251,11 +294,11 @@ main {
   gap: initial;
   flex-direction: row;
   font-family: "DM Sans"; }
-  /* line 21, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 33, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily .daily__city {
     font-size: 1.5rem;
     margin-bottom: 15px; }
-  /* line 26, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 38, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily .daily__weather {
     display: flex;
     justify-content: center;
@@ -263,16 +306,26 @@ main {
     gap: initial;
     flex-direction: row;
     margin-right: .8rem; }
-  /* line 31, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 43, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily .daily__weather-icon {
     width: 6rem; }
-  /* line 35, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 47, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily .daily__weather-degrees {
     font-size: 5rem;
     font-style: italic;
     font-weight: bold; }
+  @media screen and (max-width: 759px) {
+    /* line 23, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    .daily {
+      text-align: center;
+      background: url("../../images/bg-today-small.svg") center center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: initial;
+      flex-direction: column; } }
 
-/* line 42, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+/* line 60, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
 .daily-metrics {
   width: 100%;
   display: flex;
@@ -281,7 +334,7 @@ main {
   gap: 2rem;
   flex-direction: row;
   margin-top: 2rem; }
-  /* line 47, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 65, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily-metrics .daily-metrics__container {
     width: 33.3%;
     padding: 1rem;
@@ -290,32 +343,47 @@ main {
     font-family: "DM Sans";
     font-weight: normal;
     border: 2px solid #3d3b5e; }
-  /* line 57, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    @media screen and (max-width: 940px) {
+      /* line 65, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      .daily-metrics .daily-metrics__container {
+        width: auto; } }
+  /* line 79, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily-metrics .daily-metrics__title {
     margin-bottom: 1rem;
     color: #aeaeb7; }
-  /* line 62, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 84, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily-metrics .daily-metrics__unit {
     font-size: 2rem;
     color: #d5d4d9; }
+  @media screen and (max-width: 940px) {
+    /* line 60, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    .daily-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 1rem; } }
 
-/* line 68, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+/* line 97, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
 .daily-forecast {
   width: 100%;
   margin-top: 3rem;
   font-family: "DM Sans"; }
-  /* line 73, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 102, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily-forecast .daily-forecast__title {
     color: white;
     margin-bottom: 2rem; }
-  /* line 78, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 107, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily-forecast .daily-forecast-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     flex-direction: row; }
-  /* line 82, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    @media screen and (max-width: 940px) {
+      /* line 107, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      .daily-forecast .daily-forecast-container {
+        flex-wrap: wrap; } }
+  /* line 114, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .daily-forecast .forecast {
     display: flex;
     justify-content: center;
@@ -328,11 +396,11 @@ main {
     background-color: #272541;
     width: 15%;
     border: 2px solid #3d3b5e; }
-    /* line 91, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    /* line 123, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
     .daily-forecast .forecast .forecast__icon {
       width: 4rem;
       margin: 1.5rem 0; }
-    /* line 96, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    /* line 128, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
     .daily-forecast .forecast .forecast__temperature {
       width: 100%;
       display: flex;
@@ -340,14 +408,28 @@ main {
       align-items: center;
       gap: initial;
       flex-direction: row; }
-      /* line 100, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      @media screen and (min-width: 641px) and (max-width: 940px) {
+        /* line 128, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+        .daily-forecast .forecast .forecast__temperature {
+          flex-direction: column;
+          align-items: center;
+          gap: .5rem; } }
+      /* line 137, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
       .daily-forecast .forecast .forecast__temperature .forecast__temperature-max {
         color: white; }
-      /* line 104, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      /* line 141, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
       .daily-forecast .forecast .forecast__temperature .forecast__temperature-min {
         color: #aeaeb7; }
+    @media screen and (max-width: 640px) {
+      /* line 114, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      .daily-forecast .forecast {
+        width: calc(100% / 3 - 1rem); } }
+    @media screen and (min-width: 641px) and (max-width: 940px) {
+      /* line 114, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      .daily-forecast .forecast {
+        width: calc(100% / 7 - 1rem); } }
 
-/* line 111, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+/* line 156, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
 .hourly-forecast {
   width: 28%;
   padding: 1rem;
@@ -355,7 +437,7 @@ main {
   background-color: #272541;
   color: #d5d4d9;
   font-family: "DM Sans"; }
-  /* line 119, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 164, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__header {
     display: flex;
     justify-content: space-between;
@@ -363,10 +445,10 @@ main {
     gap: initial;
     flex-direction: row;
     margin-bottom: 1.5rem; }
-  /* line 124, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 169, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__title {
     font-size: 1.3rem; }
-  /* line 128, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 173, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__button-dropdown {
     color: white;
     background-color: #3d3b5e;
@@ -392,10 +474,10 @@ main {
     /* line 82, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_variaveis-e-mixins.scss */
     .hourly-forecast .hourly-forecast__button-dropdown img {
       width: .8rem; }
-  /* line 133, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 178, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__dropdown-container {
     position: relative; }
-  /* line 137, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 182, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__dropdown {
     list-style-type: none;
     max-height: 0;
@@ -412,15 +494,15 @@ main {
     box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
     transition: padding .5s ease-in-out, max-height .4s ease-in-out;
     z-index: 10; }
-    /* line 154, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    /* line 199, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
     .hourly-forecast .hourly-forecast__dropdown.active {
       border: 2px solid #3d3b5e;
       padding: 1rem;
       max-height: 32rem; }
-  /* line 161, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 206, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast li {
     margin-bottom: 10px; }
-  /* line 165, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 210, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__dropdown-option {
     width: 100%;
     text-align: left;
@@ -429,10 +511,10 @@ main {
     padding: .8rem .5rem;
     border-radius: 6px;
     font-size: 1rem; }
-    /* line 174, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    /* line 219, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
     .hourly-forecast .hourly-forecast__dropdown-option.active, .hourly-forecast .hourly-forecast__dropdown-option:hover {
       background-color: #312f4b; }
-  /* line 179, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 224, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours {
     display: flex;
     justify-content: center;
@@ -440,7 +522,13 @@ main {
     gap: 15px;
     flex-direction: column;
     font-weight: bold; }
-  /* line 184, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    @media screen and (min-width: 631px) and (max-width: 1439px) {
+      /* line 224, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      .hourly-forecast .hours {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto; } }
+  /* line 235, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours-content {
     display: flex;
     justify-content: flex-start;
@@ -451,11 +539,16 @@ main {
     border-radius: 10px;
     padding: .8rem;
     border: 2px solid #3d3b5e; }
-  /* line 192, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 243, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours-content__icon {
     width: 2.5rem; }
-  /* line 196, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 247, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours-content__temperature {
     margin: 0 10px 0 auto; }
+  @media screen and (max-width: 1439px) {
+    /* line 156, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    .hourly-forecast {
+      width: 100%;
+      margin-top: 2rem; } }
 
 /*# sourceMappingURL=styles.css.map */
