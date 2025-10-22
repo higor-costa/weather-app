@@ -249,8 +249,8 @@
   .hours-content__temperature {
     margin: 0 10px 0 auto;
   }
-  
-  @include device(small) {
+
+  @media screen and (max-width: 1439px) {
     width: 100%;
     margin-top: 2rem;
   }
