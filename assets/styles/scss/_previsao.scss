@@ -6,6 +6,10 @@
   @media screen and (max-width: 1439px) {
     @include displayFlex($fd: column, $ai: center);
   }
+  
+  @media screen and (min-width: 1439px) {
+    width: 100%;
+  }
 }
 
 .weather__daily {
