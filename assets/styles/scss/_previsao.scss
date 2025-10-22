@@ -1,8 +1,6 @@
 .weather {
-  width: 100%;
   margin-top: 2.5rem;
   @include displayFlex($ai: flex-start, $jc: space-between);
-
   @media screen and (max-width: 1439px) {
     @include displayFlex($fd: column, $ai: center);
   }
