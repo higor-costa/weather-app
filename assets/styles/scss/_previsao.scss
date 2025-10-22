@@ -108,7 +108,7 @@
 
   .daily-forecast-container {
     @include displayFlex($jc: space-between, $margin: 1rem);
-    @include device(small) {
+    @media screen and (max-width: 940px) {
       flex-wrap: wrap;
     }
   }
