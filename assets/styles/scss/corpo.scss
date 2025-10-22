@@ -18,15 +18,15 @@ main {
 
 .header__title-main {
   Color: $Neutral-0;
+  text-align: center;
   font: {
     family: $font-bricolage;
-    size: 2.5rem;
+    size: 3.5rem;
   }
   margin-bottom: 3rem;
 
-  @include device(small) {
-    font-size: 3.7rem;
-    text-align: center;
+  @media screen and (min-width: 675px) and (max-width: 1000px) {
+    width: 30rem;
   }
 }
 
