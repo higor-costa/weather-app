@@ -226,6 +226,12 @@
   .hours {
     @include displayFlex($ai: initial, $margin: 15px, $fd: column);
     font-weight: bold;
+
+    @media screen and (min-width: 631px) and (max-width: 1439px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
   }
 
   .hours-content {
