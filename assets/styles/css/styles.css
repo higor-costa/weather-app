@@ -170,6 +170,7 @@ main {
 
 /* line 34, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
 .header__units-container {
+  z-index: 10000;
   max-height: 0;
   overflow: hidden;
   width: 16rem;
@@ -183,12 +184,12 @@ main {
   padding: 0;
   box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
   transition: padding .5s ease-in-out, max-height .4s ease-in-out; }
-  /* line 49, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+  /* line 50, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
   .header__units-container.active {
     border: 2px solid #3d3b5e;
     padding: 1rem;
     max-height: 32rem; }
-  /* line 55, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+  /* line 56, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
   .header__units-container .units-container__button {
     text-align: left;
     font-size: 1.2rem;
@@ -199,14 +200,14 @@ main {
     width: 100%;
     padding: 12px;
     transition: background-color .2s ease-in-out; }
-    /* line 66, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+    /* line 67, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
     .header__units-container .units-container__button:hover {
       background-color: #312f4b; }
-    /* line 70, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+    /* line 71, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
     .header__units-container .units-container__button:focus {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px white; }
 
-/* line 76, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+/* line 77, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
 .units-container__options {
   border: none;
   padding: 10px 0;
@@ -217,15 +218,15 @@ main {
   align-items: flex-start;
   gap: 10px;
   flex-direction: column; }
-  /* line 83, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+  /* line 84, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
   .units-container__options .options__subtitle {
     color: #aeaeb7;
     padding-left: 10px;
     font-weight: bold; }
-    /* line 88, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+    /* line 89, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
     .units-container__options .options__subtitle:focus {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px white; }
-  /* line 93, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+  /* line 94, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
   .units-container__options .options__unit {
     display: flex;
     justify-content: space-between;
@@ -236,10 +237,10 @@ main {
     padding: 12px 10px;
     border-radius: 8px;
     position: relative; }
-  /* line 101, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+  /* line 102, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
   .units-container__options .options__unit-active {
     background-color: #312f4b; }
-  /* line 105, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
+  /* line 106, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_cabecalho.scss */
   .units-container__options input {
     width: 100%;
     height: 100%;
@@ -479,6 +480,7 @@ main {
     position: relative; }
   /* line 182, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__dropdown {
+    z-index: 1000;
     list-style-type: none;
     max-height: 0;
     overflow: hidden;
@@ -494,15 +496,15 @@ main {
     box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
     transition: padding .5s ease-in-out, max-height .4s ease-in-out;
     z-index: 10; }
-    /* line 199, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    /* line 200, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
     .hourly-forecast .hourly-forecast__dropdown.active {
       border: 2px solid #3d3b5e;
       padding: 1rem;
       max-height: 32rem; }
-  /* line 206, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 207, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast li {
     margin-bottom: 10px; }
-  /* line 210, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 211, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hourly-forecast__dropdown-option {
     width: 100%;
     text-align: left;
@@ -511,10 +513,10 @@ main {
     padding: .8rem .5rem;
     border-radius: 6px;
     font-size: 1rem; }
-    /* line 219, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+    /* line 220, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
     .hourly-forecast .hourly-forecast__dropdown-option.active, .hourly-forecast .hourly-forecast__dropdown-option:hover {
       background-color: #312f4b; }
-  /* line 224, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 225, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours {
     display: flex;
     justify-content: center;
@@ -523,12 +525,12 @@ main {
     flex-direction: column;
     font-weight: bold; }
     @media screen and (min-width: 631px) and (max-width: 1439px) {
-      /* line 224, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+      /* line 225, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
       .hourly-forecast .hours {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto; } }
-  /* line 235, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 236, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours-content {
     display: flex;
     justify-content: flex-start;
@@ -539,10 +541,10 @@ main {
     border-radius: 10px;
     padding: .8rem;
     border: 2px solid #3d3b5e; }
-  /* line 243, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 244, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours-content__icon {
     width: 2.5rem; }
-  /* line 247, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
+  /* line 248, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/_previsao.scss */
   .hourly-forecast .hours-content__temperature {
     margin: 0 10px 0 auto; }
   @media screen and (max-width: 1439px) {
