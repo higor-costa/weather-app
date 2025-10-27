@@ -180,6 +180,7 @@
   }
 
   .hourly-forecast__dropdown {
+    z-index: 1000;
     list-style-type: none;
     max-height: 0;
     overflow: hidden;
