@@ -10,70 +10,22 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/js/modules/dropdowns.js":
-/*!****************************************!*\
-  !*** ./assets/js/modules/dropdowns.js ***!
-  \****************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initDropdownButtons)\n/* harmony export */ });\nfunction initDropdownButtons() {\r\n  const buttonToggleUnits = document.querySelector('#toggleUnits');\r\n  const buttonToggleDays = document.querySelector('#toggleDays');\r\n  const buttons = [buttonToggleUnits, buttonToggleDays].filter(Boolean);\r\n\r\n  const openDropdown = ({ currentTarget }) => {\r\n    const dropdown = currentTarget.nextElementSibling;\r\n    const isActive = dropdown?.classList.toggle('active');\r\n\r\n    // Mantém apenas um dropdown aberto por vez\r\n    document.querySelectorAll('.dropdown.active').forEach((element) => {\r\n      if (element !== dropdown) {\r\n        element.classList.remove('active');\r\n      }\r\n    });\r\n\r\n    // Fecha o dropdown ao clicar fora dele\r\n    if (isActive) {\r\n      const handleClickOutside = (event) => {\r\n        const clickedInsideButton = currentTarget.contains(event.target);\r\n        if (!dropdown.contains(event.target) && !clickedInsideButton) {\r\n          dropdown.classList.remove('active');\r\n          document.removeEventListener('click', handleClickOutside);\r\n        }\r\n      };\r\n      document.addEventListener('click', handleClickOutside);\r\n    }\r\n  };\r\n\r\n  buttons.forEach((button) => {\r\n    button.addEventListener('click', openDropdown);\r\n  });\r\n}\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/dropdowns.js?\n}");
-
-/***/ }),
-
 /***/ "./assets/js/script.js":
 /*!*****************************!*\
   !*** ./assets/js/script.js ***!
   \*****************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropdowns.js */ \"./assets/js/modules/dropdowns.js\");\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n  (0,_modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/script.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/dropdowns.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/dropdowns.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/script.js?\n}");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -90,7 +42,8 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mo
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./assets/js/script.js");
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./assets/js/script.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
