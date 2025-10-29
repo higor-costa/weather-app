@@ -20,13 +20,23 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./assets/js/modules/selectUnitsMeasures.js":
+/*!**************************************************!*\
+  !*** ./assets/js/modules/selectUnitsMeasures.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initSelectUnitsMeasures)\n/* harmony export */ });\nfunction initSelectUnitsMeasures() {\n  const metricButtons = document.querySelectorAll('fieldset input');\n  const iconCheckmarks = document.createElement('img');\n  iconCheckmarks.src = './assets/images/icon-checkmark.svg';\n\n  const selectUnitMeasure = ({ currentTarget }) => {\n    const metricSelected = currentTarget.value;\n    const btnMeasure = currentTarget.parentNode;\n    const cloneIconCheckmarks = iconCheckmarks.cloneNode(true);\n\n    metricButtons.forEach((metric) => {\n      const containerMetric = metric.parentNode;\n      if (metric.name === currentTarget.name && metric !== metricSelected) {\n        containerMetric.querySelector('img')?.remove();\n        containerMetric.classList.remove('options__unit-active');\n      }\n    });\n\n    btnMeasure.appendChild(cloneIconCheckmarks);\n    btnMeasure.classList.add('options__unit-active');\n  };\n\n  for (const button of metricButtons) {\n    button.addEventListener('change', selectUnitMeasure);\n  }\n}\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/selectUnitsMeasures.js?\n}");
+
+/***/ }),
+
 /***/ "./assets/js/script.js":
 /*!*****************************!*\
   !*** ./assets/js/script.js ***!
   \*****************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropdowns.js */ \"./assets/js/modules/dropdowns.js\");\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n  (0,_modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/script.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropdowns.js */ \"./assets/js/modules/dropdowns.js\");\n/* harmony import */ var _modules_selectUnitsMeasures_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/selectUnitsMeasures.js */ \"./assets/js/modules/selectUnitsMeasures.js\");\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n  (0,_modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n  (0,_modules_selectUnitsMeasures_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/script.js?\n}");
 
 /***/ })
 
