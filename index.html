@@ -33,12 +33,12 @@
         <legend class="options__subtitle">Temperature</legend>
         <label class="options__unit options__unit-active" for="celsius">
           Celsius (°C)
-          <input type="radio" name="temperature" id="celsius" value="celsius" checked>
+          <input type="radio" name="temperature" id="celsius" value="celsius" data-unit="metric" checked>
           <img src="./assets/images/icon-checkmark.svg" alt="Icon checkmark">
         </label>
         <label class="options__unit" for="fahrenheit">
           Fahrenheit (°F)
-          <input type="radio" name="temperature" id="fahrenheit" value="fahrenheit">
+          <input type="radio" name="temperature" id="fahrenheit" value="fahrenheit" data-unit="imperial">
         </label>
       </fieldset>
 
@@ -47,12 +47,12 @@
         <legend class="options__subtitle">Wind Speed</legend>
         <label class="options__unit options__unit-active" for="kmh">
           km/h
-          <input type="radio" name="wind" id="kmh" value="kmh" checked>
+          <input type="radio" name="wind" id="kmh" value="kmh" data-unit="metric" checked>
           <img src="./assets/images/icon-checkmark.svg" alt="Icon checkmark">
         </label>
         <label class="options__unit" for="mph">
           mph
-          <input type="radio" name="wind" id="mph" value="mph">
+          <input type="radio" name="wind" id="mph" value="mph" data-unit="imperial">
         </label>
       </fieldset>
 
@@ -61,12 +61,12 @@
         <legend class="options__subtitle">Precipitation</legend>
         <label class="options__unit options__unit-active" for="mm">
           Millimeters (mm)
-          <input type="radio" name="precipitation" id="mm" value="mm" checked>
+          <input type="radio" name="precipitation" id="mm" value="mm" data-unit="metric" checked>
           <img src="./assets/images/icon-checkmark.svg" alt="Icon checkmark">
         </label>
         <label class="options__unit" for="inches">
           Inches (in)
-          <input type="radio" name="precipitation" id="inches" value="inches">
+          <input type="radio" name="precipitation" id="inches" value="inches" data-unit="imperial">
         </label>
       </fieldset>
     </div>
