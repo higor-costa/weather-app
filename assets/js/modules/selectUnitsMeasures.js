@@ -2,6 +2,7 @@ export default function initSelectUnitsMeasures() {
   const metricButtons = document.querySelectorAll('fieldset input');
   const iconCheckmarks = document.createElement('img');
   iconCheckmarks.src = './assets/images/icon-checkmark.svg';
+  const btnSwitchMetrics = document.querySelector('.units-container__button');
 
   const selectUnitMeasure = ({ currentTarget }) => {
     const metricSelected = currentTarget.value;
@@ -20,7 +21,25 @@ export default function initSelectUnitsMeasures() {
     btnMeasure.classList.add('options__unit-active');
   };
 
+  const toggleAllUnitsMeasures = () => {
+    const isImperial = btnSwitchMetrics.dataset.mode === 'imperial';
+
+    btnSwitchMetrics.dataset.mode = isImperial ? 'metric' : 'imperial';
+    btnSwitchMetrics.textContent = isImperial ? 'Switch to Imperial' : 'Switch to Metric';
+
+    metricButtons.forEach((button) => {
+      const unit = button.dataset.unit; // metric | imperial
+
+      if (unit === btnSwitchMetrics.dataset.mode) {
+        button.checked = true;
+        selectUnitMeasure({ currentTarget: button});
+      }
+    })
+  };
+
   for (const button of metricButtons) {
     button.addEventListener('change', selectUnitMeasure);
   }
+
+  btnSwitchMetrics.addEventListener('click', toggleAllUnitsMeasures);
 }
