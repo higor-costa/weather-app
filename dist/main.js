@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/js/modules/currentForecast.js":
+/*!**********************************************!*\
+  !*** ./assets/js/modules/currentForecast.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initCurrentForecast)\n/* harmony export */ });\nasync function initCurrentForecast(current, currentUnits, latitude, longitude) {\n  const temperature = document.querySelector('#temperature');\n  const apparentTemperature = document.querySelector('#apparent_temperature');\n  const relative_humidity = document.querySelector('#relative_humidity');\n  const windSpeed = document.querySelector('#wind_speed');\n  const precipitation = document.querySelector('#precipitation');\n  const date = document.querySelector('#date');\n  const locality = document.querySelector('#locality');\n\n  const {\n    temperature_2m,\n    apparent_temperature,\n    relative_humidity_2m,\n    wind_speed_10m,\n    precipitation: precip,\n  } = current;\n\n  const {\n    relative_humidity_2m: rhUnits,\n    wind_speed_10m: windUnit,\n    precipitation: precipUnit,\n  } = currentUnits;\n\n  temperature.textContent = `${Math.round(temperature_2m)}º`;\n  apparentTemperature.textContent = `${Math.round(apparent_temperature)}º`;\n  relative_humidity.textContent = `${relative_humidity_2m}${rhUnits}`;\n  windSpeed.textContent = `${Math.round(wind_speed_10m)} ${windUnit}`;\n  precipitation.textContent = `${Math.round(precip)} ${precipUnit}`;\n\n  const formattedDate = new Intl.DateTimeFormat('en', {\n    weekday: 'short',\n    day: 'numeric',\n    month: 'short',\n    year: 'numeric',\n  }).format(new Date());\n\n  date.textContent = formattedDate;\n\n  try {\n    const url = `https://api-bdc.io/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;\n    const response = await fetch(url);\n    const data = await response.json();\n\n    const city = data.locality || data.city || 'Unknown location';\n    const country = data.countryName;\n\n    locality.textContent = `${city}, ${country}`;\n  } catch (error) {\n    console.error('Unknown location: ', error);\n    locality.textContent = 'Unknown location';\n  }\n}\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/currentForecast.js?\n}");
+
+/***/ }),
+
 /***/ "./assets/js/modules/dropdowns.js":
 /*!****************************************!*\
   !*** ./assets/js/modules/dropdowns.js ***!
@@ -20,13 +30,43 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./assets/js/modules/forecast.js":
+/*!***************************************!*\
+  !*** ./assets/js/modules/forecast.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initForecast)\n/* harmony export */ });\n/* harmony import */ var _currentForecast_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./currentForecast.js */ \"./assets/js/modules/currentForecast.js\");\n\n\nasync function initForecast(latitude, longitude) {\n  try {\n    const params = {\n      latitude,\n      longitude,\n      daily: ['temperature_2m_max', 'temperature_2m_min'],\n      hourly: 'temperature_2m',\n      current: [\n        'temperature_2m',\n        'is_day',\n        'apparent_temperature',\n        'precipitation',\n        'relative_humidity_2m',\n        'wind_speed_10m',\n      ],\n      wind_speed_unit: 'kmh',\n      temperature_unit: 'celsius',\n      precipitation_unit: 'mm',\n    };\n    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${\n      longitude\n    }&daily=${params.daily.join(',')}&hourly=${\n      params.hourly\n    }&current=${params.current}`\n    \n    const response = await fetch(url);\n    const forecastData = await response.json();\n    const {current, current_units} = forecastData;\n    (0,_currentForecast_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(current, current_units, latitude, longitude);\n\n  } catch (error) {\n    console.log(error);\n  }\n}\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/forecast.js?\n}");
+
+/***/ }),
+
 /***/ "./assets/js/modules/hoursForecast.js":
 /*!********************************************!*\
   !*** ./assets/js/modules/hoursForecast.js ***!
   \********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initHourForecast)\n/* harmony export */ });\nfunction initHourForecast() {\n  const buttonsDay = document.querySelectorAll('.dropdown li button');\n  const buttonDaySelected = document.querySelector('#toggleDays span');\n\n  const selectDayHourForecast = ({ currentTarget }) => {\n    const daySelected = currentTarget;\n    buttonDaySelected.textContent = daySelected.dataset.day || daySelected.textContent; // Monday, Tursday, Wednesday, Thursday, Friday, Saturday ou Sunday\n\n    buttonsDay.forEach((button) => {\n      button.classList.remove('active');\n    })\n\n    daySelected.classList.add('active');\n  };\n\n  buttonsDay.forEach((button) => {\n    button.addEventListener('click', selectDayHourForecast);\n  });\n}\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/hoursForecast.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initHourForecast)\n/* harmony export */ });\nfunction initHourForecast() {\r\n  const buttonsDay = document.querySelectorAll('.dropdown li button');\r\n  const buttonDaySelected = document.querySelector('#toggleDays span');\r\n\r\n  const selectDayHourForecast = ({ currentTarget }) => {\r\n    const daySelected = currentTarget;\r\n    buttonDaySelected.textContent = daySelected.dataset.day || daySelected.textContent; // Monday, Tursday, Wednesday, Thursday, Friday, Saturday ou Sunday\r\n\r\n    buttonsDay.forEach((button) => {\r\n      button.classList.remove('active');\r\n    })\r\n\r\n    daySelected.classList.add('active');\r\n  };\r\n\r\n  buttonsDay.forEach((button) => {\r\n    button.addEventListener('click', selectDayHourForecast);\r\n  });\r\n}\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/hoursForecast.js?\n}");
+
+/***/ }),
+
+/***/ "./assets/js/modules/localCoords.js":
+/*!******************************************!*\
+  !*** ./assets/js/modules/localCoords.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initLocalCoords)\n/* harmony export */ });\nfunction initLocalCoords() {\n  return new Promise((resolve, reject) => {\n    if (!('geolocation' in navigator)) {\n      reject('Geolocalização não é suportada neste navegador.');\n    }\n    navigator.geolocation.getCurrentPosition(\n      (position) => {\n        resolve({\n          latitude: position.coords.latitude,\n          longitude: position.coords.longitude,\n        });\n      },\n      (error) => reject('Erro ao obter a localização: ', error.message)\n    );\n  });\n}\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/localCoords.js?\n}");
+
+/***/ }),
+
+/***/ "./assets/js/modules/localForecast.js":
+/*!********************************************!*\
+  !*** ./assets/js/modules/localForecast.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initLocalForecast)\n/* harmony export */ });\n/* harmony import */ var _localCoords_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./localCoords.js */ \"./assets/js/modules/localCoords.js\");\n/* harmony import */ var _forecast_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forecast.js */ \"./assets/js/modules/forecast.js\");\n\n\n\nasync function initLocalForecast() {\n  try {\n    const { latitude, longitude } = await (0,_localCoords_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    (0,_forecast_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(latitude, longitude);\n  } catch (error) {\n    console.log(error);\n  }\n}\n\n\n//# sourceURL=webpack://weather-app/./assets/js/modules/localForecast.js?\n}");
 
 /***/ }),
 
@@ -46,7 +86,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \*****************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropdowns.js */ \"./assets/js/modules/dropdowns.js\");\n/* harmony import */ var _modules_selectUnitsMeasures_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/selectUnitsMeasures.js */ \"./assets/js/modules/selectUnitsMeasures.js\");\n/* harmony import */ var _modules_hoursForecast_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/hoursForecast.js */ \"./assets/js/modules/hoursForecast.js\");\n\r\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n  (0,_modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n  (0,_modules_selectUnitsMeasures_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  (0,_modules_hoursForecast_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/script.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropdowns.js */ \"./assets/js/modules/dropdowns.js\");\n/* harmony import */ var _modules_selectUnitsMeasures_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/selectUnitsMeasures.js */ \"./assets/js/modules/selectUnitsMeasures.js\");\n/* harmony import */ var _modules_hoursForecast_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/hoursForecast.js */ \"./assets/js/modules/hoursForecast.js\");\n/* harmony import */ var _modules_localCoords_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/localCoords.js */ \"./assets/js/modules/localCoords.js\");\n/* harmony import */ var _modules_localForecast_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/localForecast.js */ \"./assets/js/modules/localForecast.js\");\n\r\n\r\n\r\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n  (0,_modules_dropdowns_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n  (0,_modules_selectUnitsMeasures_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  (0,_modules_hoursForecast_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n  (0,_modules_localCoords_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n  (0,_modules_localForecast_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://weather-app/./assets/js/script.js?\n}");
 
 /***/ })
 
