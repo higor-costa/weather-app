@@ -5,9 +5,10 @@ export default async function initForecast(latitude, longitude) {
     const params = {
       latitude,
       longitude,
-      daily: ['temperature_2m_max', 'temperature_2m_min'],
-      hourly: 'temperature_2m',
+      daily: ['weather_code', 'temperature_2m_max', 'temperature_2m_min'],
+      hourly: ['temperature_2m', 'weather_code'],
       current: [
+        'weather_code',
         'temperature_2m',
         'is_day',
         'apparent_temperature',
