@@ -1,4 +1,5 @@
 import initCurrentForecast from "./currentForecast.js";
+import initDailyForecast from "./dailyForecast.js";
 
 export default async function initForecast(latitude, longitude) {
   try {
