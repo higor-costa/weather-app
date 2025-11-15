@@ -1,3 +1,4 @@
+import { iconsCode } from "./dailyForecast.js";
 export default async function initCurrentForecast(current, currentUnits, latitude, longitude) {
   const temperature = document.querySelector('#temperature');
   const apparentTemperature = document.querySelector('#apparent_temperature');
@@ -6,7 +7,6 @@ export default async function initCurrentForecast(current, currentUnits, latitud
   const precipitation = document.querySelector('#precipitation');
   const date = document.querySelector('#date');
   const locality = document.querySelector('#locality');
-
   const {
     temperature_2m,
     apparent_temperature,
@@ -35,6 +35,10 @@ export default async function initCurrentForecast(current, currentUnits, latitud
   }).format(new Date());
 
   date.textContent = formattedDate;
+
+  const currentForecastIcon = document.querySelector('.daily__weather-icon');
+  const ApiIconCode = current.weather_code
+  currentForecastIcon.src = `./assets/images/icon-${iconsCode.get(ApiIconCode)}.webp`;
 
   try {
     const url = `https://api-bdc.io/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
