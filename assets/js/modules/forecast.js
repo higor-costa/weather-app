@@ -31,6 +31,7 @@ export default async function initForecast(latitude, longitude) {
     const forecastData = await response.json();
     const {current, current_units} = forecastData;
     initCurrentForecast(current, current_units, latitude, longitude);
+    initDailyForecast(forecastData);
 
   } catch (error) {
     console.log(error);
