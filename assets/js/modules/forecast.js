@@ -1,5 +1,6 @@
 import initCurrentForecast from "./currentForecast.js";
 import initDailyForecast from "./dailyForecast.js";
+import initHourlyForecast from "./hourlyForecast.js";
 
 export default async function initForecast(latitude, longitude) {
   try {
@@ -32,6 +33,7 @@ export default async function initForecast(latitude, longitude) {
     const {current, current_units} = forecastData;
     initCurrentForecast(current, current_units, latitude, longitude);
     initDailyForecast(forecastData);
+    initHourlyForecast(forecastData);
 
   } catch (error) {
     console.log(error);
