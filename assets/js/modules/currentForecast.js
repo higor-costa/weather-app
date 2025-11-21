@@ -1,5 +1,5 @@
 import { iconsCode } from "./dailyForecast.js";
-export default async function initCurrentForecast(current, currentUnits, latitude, longitude) {
+export default async function initCurrentForecast({current, current_units}, { latitude, longitude }) {
   const temperature = document.querySelector('#temperature');
   const apparentTemperature = document.querySelector('#apparent_temperature');
   const relative_humidity = document.querySelector('#relative_humidity');
@@ -19,7 +19,7 @@ export default async function initCurrentForecast(current, currentUnits, latitud
     relative_humidity_2m: rhUnits,
     wind_speed_10m: windUnit,
     precipitation: precipUnit,
-  } = currentUnits;
+  } = current_units;
 
   temperature.textContent = `${Math.round(temperature_2m)}º`;
   apparentTemperature.textContent = `${Math.round(apparent_temperature)}º`;
