@@ -1,12 +1,13 @@
 import initCurrentForecast from "./currentForecast.js";
 import initDailyForecast from "./dailyForecast.js";
 import initHourlyForecast from "./hourlyForecast.js";
+import { latitudeGlobal, longitudeGlobal } from './localCoords.js';
 
-export default async function initForecast(latitude, longitude) {
+export default async function initForecast(unitsMetrics) {
   try {
     const params = {
-      latitude,
-      longitude,
+      latitude: latitudeGlobal,
+      longitude: longitudeGlobal,
       daily: ['weather_code', 'temperature_2m_max', 'temperature_2m_min'],
       hourly: ['temperature_2m', 'weather_code'],
       current: [
@@ -18,20 +19,21 @@ export default async function initForecast(latitude, longitude) {
         'relative_humidity_2m',
         'wind_speed_10m',
       ],
-      wind_speed_unit: 'kmh',
-      temperature_unit: 'celsius',
-      precipitation_unit: 'mm',
+      wind_speed_unit: unitsMetrics.windSpeed,
+      temperature_unit: unitsMetrics.temperature,
+      precipitation_unit: unitsMetrics.precipitation,
     };
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${
-      longitude
-    }&daily=${params.daily.join(',')}&hourly=${
-      params.hourly
-    }&current=${params.current}`
-    
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${params.latitude}&longitude=${params.longitude}&daily=${params.daily.join(
+      ','
+    )}&hourly=${params.hourly.join(',')}&current=${params.current.join(
+      ','
+    )}&wind_speed_unit=${params.wind_speed_unit}&temperature_unit=${
+      params.temperature_unit
+    }&precipitation_unit=${params.precipitation_unit}`;
+
     const response = await fetch(url);
     const forecastData = await response.json();
-    const {current, current_units} = forecastData;
-    initCurrentForecast(current, current_units, latitude, longitude);
+    initCurrentForecast(forecastData, params);
     initDailyForecast(forecastData);
     initHourlyForecast(forecastData);
 
