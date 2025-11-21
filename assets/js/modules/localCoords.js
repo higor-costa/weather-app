@@ -1,3 +1,9 @@
+import initForecast from "./forecast.js";
+import { unitsMetrics } from "./selectUnitsMeasures.js";
+
+export let latitudeGlobal;
+export let longitudeGlobal;
+
 export default function initLocalCoords() {
   return new Promise((resolve, reject) => {
     if (!('geolocation' in navigator)) {
@@ -5,10 +11,13 @@ export default function initLocalCoords() {
     }
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        latitudeGlobal = position.coords.latitude;
+        longitudeGlobal = position.coords.longitude
         resolve({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
+          latitude: latitudeGlobal,
+          longitude: longitudeGlobal,
         });
+        initForecast(unitsMetrics);
       },
       (error) => reject('Erro ao obter a localização: ', error.message)
     );
