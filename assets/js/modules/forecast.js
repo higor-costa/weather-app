@@ -23,15 +23,24 @@ export default async function initForecast(unitsMetrics) {
       temperature_unit: unitsMetrics.temperature,
       precipitation_unit: unitsMetrics.precipitation,
     };
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${params.latitude}&longitude=${params.longitude}&daily=${params.daily.join(
-      ','
-    )}&hourly=${params.hourly.join(',')}&current=${params.current.join(
-      ','
-    )}&wind_speed_unit=${params.wind_speed_unit}&temperature_unit=${
-      params.temperature_unit
-    }&precipitation_unit=${params.precipitation_unit}`;
+
+    if (!params.latitude || !params.longitude) throw new Error('Coordinates invalid');
+
+    const urlParams = new URLSearchParams({
+      latitude: params.latitude,
+      longitude: params.longitude,
+      daily: params.daily.join(','),
+      hourly: params.hourly.join(','),
+      current: params.current.join(','),
+      wind_speed_unit: params.wind_speed_unit,
+      temperature_unit: params.temperature_unit,
+      precipitation_unit: params.precipitation_unit,
+    });
+    const url = `https://api.open-meteo.com/v1/forecast?${urlParams}`;
 
     const response = await fetch(url);
+    if (!response.ok) throw new Error('Failed to fetch forecast data');
+
     const forecastData = await response.json();
     initCurrentForecast(forecastData, params);
     initDailyForecast(forecastData);
