@@ -3,11 +3,11 @@ import initDailyForecast from "./dailyForecast.js";
 import initHourlyForecast from "./hourlyForecast.js";
 import { latitudeGlobal, longitudeGlobal } from './localCoords.js';
 
-export default async function initForecast(unitsMetrics) {
+export default async function initForecast(unitsMetrics, latitude = latitudeGlobal, longitude = longitudeGlobal) {
   try {
     const params = {
-      latitude: latitudeGlobal,
-      longitude: longitudeGlobal,
+      latitude,
+      longitude,
       daily: ['weather_code', 'temperature_2m_max', 'temperature_2m_min'],
       hourly: ['temperature_2m', 'weather_code'],
       current: [
