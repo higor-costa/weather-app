@@ -78,15 +78,16 @@ main {
     width: 80%;
     padding: 1rem 1rem;
     border-radius: 15px;
-    color: #d5d4d9; }
-    /* line 45, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    color: #d5d4d9;
+    position: relative; }
+    /* line 46, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container div:focus-within {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px white; }
     @media screen and (max-width: 759px) {
       /* line 37, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
       .form__container div {
         width: 100%; } }
-  /* line 54, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 55, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container .form__field-text {
     width: 90%;
     background-color: transparent;
@@ -95,10 +96,10 @@ main {
     font-size: 1rem;
     outline: none;
     color: #d5d4d9; }
-    /* line 63, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 64, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__field-text::placeholder {
       color: #d5d4d9; }
-  /* line 68, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  /* line 69, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
   .form__container .form__button {
     background-color: #4455da;
     padding: 0 1.5rem;
@@ -106,16 +107,38 @@ main {
     border-radius: 15px;
     font-size: 1rem;
     transition: background-color .2s ease-in-out; }
-    /* line 76, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 77, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__button:focus {
       box-shadow: 0px 0px 1px 2px #03012d, 0px 0px 1px 4px #2d1c9c; }
-    /* line 80, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    /* line 81, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container .form__button:hover {
       background-color: #2d1c9c; }
     @media screen and (max-width: 759px) {
-      /* line 68, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+      /* line 69, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
       .form__container .form__button {
         padding: 1rem 0; } }
+  /* line 90, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+  .form__container .form__options {
+    font-family: "Bricolage Grotesque Bold";
+    width: 100%;
+    background: #272541;
+    list-style-type: none;
+    position: absolute;
+    padding: .4rem;
+    border-radius: 15px;
+    left: 0;
+    top: 120%;
+    font-size: .8rem;
+    display: none; }
+    /* line 103, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+    .form__container .form__options .form__options-city {
+      color: white;
+      padding: .4rem;
+      cursor: pointer; }
+      /* line 108, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
+      .form__container .form__options .form__options-city:hover {
+        background-color: #312f4b;
+        border-radius: 8px; }
   @media screen and (max-width: 759px) {
     /* line 33, ../../../OneDrive/Documentos/Desenvolvimento/frontend-mentor/weather-app/assets/styles/scss/corpo.scss */
     .form__container {
