@@ -2,9 +2,18 @@ import initCurrentForecast from "./currentForecast.js";
 import initDailyForecast from "./dailyForecast.js";
 import initHourlyForecast from "./hourlyForecast.js";
 import { latitudeGlobal, longitudeGlobal } from './localCoords.js';
+import initLocalStorage from "./localStorage.js";
 
 export default async function initForecast(unitsMetrics, latitude = latitudeGlobal, longitude = longitudeGlobal) {
   try {
+    const storage = initLocalStorage();
+
+    if (latitude && longitude) {
+      storage.set([latitude, longitude]);
+    }
+
+    if (!latitude || !longitude) throw new Error("Coordinates invalid")
+
     const params = {
       latitude,
       longitude,
@@ -23,8 +32,6 @@ export default async function initForecast(unitsMetrics, latitude = latitudeGlob
       temperature_unit: unitsMetrics.temperature,
       precipitation_unit: unitsMetrics.precipitation,
     };
-
-    if (!params.latitude || !params.longitude) throw new Error('Coordinates invalid');
 
     const urlParams = new URLSearchParams({
       latitude: params.latitude,
