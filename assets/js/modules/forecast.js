@@ -1,6 +1,7 @@
 import initCurrentForecast from "./currentForecast.js";
 import initDailyForecast from "./dailyForecast.js";
 import initHourlyForecast from "./hourlyForecast.js";
+import initHourForecast from "./hoursForecast.js";
 import { latitudeGlobal, longitudeGlobal } from './localCoords.js';
 import initLocalStorage from "./localStorage.js";
 
@@ -28,6 +29,8 @@ export default async function initForecast(unitsMetrics, latitude = latitudeGlob
         'relative_humidity_2m',
         'wind_speed_10m',
       ],
+      past_days: 7,
+	    forecast_days: 7,
       wind_speed_unit: unitsMetrics.windSpeed,
       temperature_unit: unitsMetrics.temperature,
       precipitation_unit: unitsMetrics.precipitation,
@@ -42,6 +45,8 @@ export default async function initForecast(unitsMetrics, latitude = latitudeGlob
       wind_speed_unit: params.wind_speed_unit,
       temperature_unit: params.temperature_unit,
       precipitation_unit: params.precipitation_unit,
+      past_days: params.past_days,
+	    forecast_days: params.forecast_days
     });
     const url = `https://api.open-meteo.com/v1/forecast?${urlParams}`;
 
@@ -52,6 +57,7 @@ export default async function initForecast(unitsMetrics, latitude = latitudeGlob
     initCurrentForecast(forecastData, params);
     initDailyForecast(forecastData);
     initHourlyForecast(forecastData);
+    initHourForecast(forecastData);
 
   } catch (error) {
     console.log(error);
